@@ -1,0 +1,162 @@
+{
+  "hero": {
+    "name": "Kevin ping pong",
+    "ancestry": "Dragonborn",
+    "background": "Soldier",
+    "className": "Monk",
+    "level": "5",
+    "xp": "75",
+    "alignment": ""
+  },
+  "combat": [
+    {
+      "label": "Armor Class",
+      "value": ""
+    },
+    {
+      "label": "Current HP",
+      "value": "25"
+    },
+    {
+      "label": "Initiative",
+      "value": "8"
+    },
+    {
+      "label": "Speed",
+      "value": "30 ft"
+    },
+    {
+      "label": "Proficiency",
+      "value": "+2"
+    },
+    {
+      "label": "Passive Perception",
+      "value": "11"
+    }
+  ],
+  "abilities": {
+    "strength": {
+      "label": "Strength",
+      "value": 10
+    },
+    "dexterity": {
+      "label": "Dexterity",
+      "value": 17
+    },
+    "constitution": {
+      "label": "Constitution",
+      "value": 16
+    },
+    "intelligence": {
+      "label": "Intelligence",
+      "value": 5
+    },
+    "wisdom": {
+      "label": "Wisdom",
+      "value": 14
+    },
+    "charisma": {
+      "label": "Charisma",
+      "value": 8
+    }
+  },
+  "attacks": [
+    {
+      "name": "Bow & Arrow",
+      "damage": "1d6",
+      "stat": "Dex",
+      "range": "80-320 ft"
+    },
+    {
+      "name": "Unarmed Strike",
+      "damage": "1d4",
+      "stat": "Dex",
+      "range": "Melee"
+    }
+  ],
+  "traits": [
+    {
+      "title": "15 ft cone or 30 ft straight line (5 ft wide)",
+      "description": ""
+    },
+    {
+      "title": "1d10 damage",
+      "description": ""
+    },
+    {
+      "title": "Damage resistance",
+      "description": ""
+    },
+    {
+      "title": "Fire damage resistance",
+      "description": ""
+    },
+    {
+      "title": "Darkvision 60 ft",
+      "description": ""
+    }
+  ],
+  "feats": [
+    {
+      "title": "Savage Attacker: once a target is hit, roll weapon damage dice twice and use either roll.",
+      "description": ""
+    }
+  ],
+  "equipment": [
+    {
+      "name": "spears",
+      "count": "2"
+    },
+    {
+      "name": "daggers",
+      "count": "5"
+    },
+    {
+      "name": "Artisan's tools",
+      "count": ""
+    },
+    {
+      "name": "Explorer's pack",
+      "count": ""
+    },
+    {
+      "name": "gold pieces",
+      "count": "14"
+    },
+    {
+      "name": "gold pieces",
+      "count": "11"
+    },
+    {
+      "name": "arrows",
+      "count": "20"
+    },
+    {
+      "name": "Gaming set",
+      "count": ""
+    },
+    {
+      "name": "Healer's kit",
+      "count": ""
+    },
+    {
+      "name": "Quiver",
+      "count": ""
+    },
+    {
+      "name": "Traveler's clothes",
+      "count": ""
+    }
+  ],
+  "coins": {
+    "cp": "",
+    "sp": "",
+    "ep": "",
+    "gp": "25",
+    "pp": ""
+  },
+  "notes": "sweet\n",
+  "meta": {
+    "updatedAt": "2026-04-08T03:02:46.984Z"
+  }
+}
