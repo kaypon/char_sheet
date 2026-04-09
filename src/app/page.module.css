@@ -1,409 +1,907 @@
 .page {
-  width: min(1580px, calc(100vw - 20px));
+  width: min(1620px, calc(100vw - 24px));
   min-height: 100vh;
   margin: 0 auto;
-  padding: 10px 0 12px;
+  padding: 12px 0 18px;
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 10px;
+  gap: 12px;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 12px;
-  padding: 14px 18px;
-  border: 1px solid rgba(86, 60, 35, 0.14);
-  border-radius: 22px;
+  padding: 12px 16px;
+  border: 1px solid rgba(137, 150, 180, 0.14);
+  border-radius: 18px;
   background:
-    radial-gradient(circle at top left, rgba(247, 231, 186, 0.55), transparent 35%),
-    linear-gradient(135deg, rgba(84, 42, 24, 0.06), transparent 60%),
-    rgba(255, 249, 235, 0.94);
-  box-shadow: 0 10px 28px rgba(54, 33, 14, 0.08);
+    linear-gradient(180deg, rgba(18, 23, 31, 0.96), rgba(19, 24, 32, 0.9)),
+    radial-gradient(circle at top left, rgba(86, 127, 192, 0.12), transparent 40%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 18px 38px rgba(0, 0, 0, 0.18);
 }
 
-.heroCopy {
+.heroTitleBlock {
   display: grid;
-  gap: 4px;
-  align-content: center;
+  gap: 10px;
 }
 
 .hero h1 {
-  font-size: clamp(1.8rem, 2.8vw, 2.7rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
   text-transform: uppercase;
-  color: #3a1f12;
+  color: #f3f6fb;
 }
 
-.heroMeta {
-  display: grid;
-  align-content: center;
+.tabBar {
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: 8px;
-  padding: 12px 14px;
-  border-radius: 16px;
-  background: rgba(91, 56, 30, 0.07);
 }
 
-.eyebrow {
-  font-size: 0.72rem;
+.tabButton,
+.saveBadge,
+.miniButton,
+.iconButton,
+.tabAction,
+.tabCloseButton,
+.npcListItem {
+  font: inherit;
+}
+
+.tabButton {
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(113, 127, 153, 0.22);
+  background: rgba(30, 37, 49, 0.84);
+  color: #bcc8d9;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #865c2c;
+  cursor: pointer;
 }
 
-.subtitle {
-  max-width: 58ch;
-  font-size: 0.92rem;
-  line-height: 1.35;
-  color: #5f4a37;
+.tabButtonActive {
+  background: linear-gradient(180deg, rgba(65, 98, 151, 0.95), rgba(46, 72, 119, 0.92));
+  color: #f4f8ff;
+  border-color: rgba(116, 152, 215, 0.45);
+  box-shadow: 0 8px 24px rgba(25, 40, 68, 0.22);
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.helperLabel {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9fadc3;
 }
 
 .helper {
   font-size: 0.82rem;
   line-height: 1.35;
-  color: #6f5b47;
+  color: #91a0b6;
 }
 
 .saveBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 7px 12px;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 12px;
   border-radius: 999px;
-  background: rgba(36, 90, 58, 0.12);
-  color: #244f34;
-  font-size: 0.82rem;
+  background: rgba(76, 163, 120, 0.14);
+  color: #b7e5c8;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
 .saveError {
-  background: rgba(146, 53, 34, 0.12);
-  color: #8b2f20;
+  background: rgba(176, 92, 92, 0.14);
+  color: #efb0b0;
 }
 
 .saveDot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: currentColor;
 }
 
-.topGrid,
-.dashboardGrid {
+.workspace {
+  display: grid;
+  grid-template-columns: 308px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.sidebar {
   display: grid;
   gap: 10px;
+  align-content: start;
 }
 
-.topGrid {
-  grid-template-columns: 1.35fr 1fr;
+.mainBoard {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.dashboardGrid {
+.sideCard,
+.panel,
+.writerPanel,
+.inventoryPanel,
+.npcPanel,
+.npcList,
+.npcDetail {
+  border: 1px solid rgba(101, 112, 134, 0.16);
+  border-radius: 18px;
+}
+
+.sideCard {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  background:
+    linear-gradient(180deg, rgba(20, 25, 34, 0.78), rgba(18, 22, 30, 0.72)),
+    rgba(17, 21, 29, 0.86);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.referenceCard {
+  border-color: rgba(93, 105, 128, 0.14);
+  background:
+    linear-gradient(180deg, rgba(17, 21, 29, 0.78), rgba(15, 19, 27, 0.72)),
+    rgba(16, 19, 27, 0.84);
+}
+
+.identityCard {
+  border-color: rgba(115, 129, 155, 0.18);
+}
+
+.sideHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sideLabel,
+.sideSubheader h3,
+.tableHeader span,
+.statCard span,
+.sideField span,
+.coinCard span,
+.writerField span,
+.inventoryItem textarea::placeholder {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #7f8da4;
+}
+
+.sideMeta {
+  font-size: 0.72rem;
+  color: #66748a;
+}
+
+.sideGrid {
+  display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.sideField {
+  display: grid;
+  gap: 4px;
+}
+
+.sideFieldWide {
+  grid-column: span 2;
+}
+
+.sideSectionHeader,
+.subsectionHeader,
+.panelHeader,
+.writerHeader,
+.inventoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.sideSectionHeader h2,
+.panelHeader h2,
+.writerHeader h2,
+.inventoryHeader h2 {
+  font-size: 0.92rem;
+  line-height: 1;
+  color: #e7edf7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sideSubheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sideList,
+.table,
+.featureColumns,
+.subsection,
+.sideGroup,
+.inventoryList,
+.npcListItems {
+  display: grid;
+  gap: 8px;
+}
+
+.sideChipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sideListRow,
+.tableRow,
+.abilityRow,
+.tableHeader,
+.attackRow,
+.detailRow,
+.trackerRow,
+.inventoryTopRow {
+  display: grid;
+  align-items: center;
+  gap: 6px;
+}
+
+.sideListRow {
+  grid-template-columns: 1fr 18px;
+}
+
+.sideChip {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 6px;
+  border: 1px solid rgba(92, 107, 132, 0.2);
+  border-radius: 999px;
+  background: rgba(25, 31, 42, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.sheetGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  grid-template-areas:
+    "combat combat"
+    "abilities trackers"
+    "weapons features";
+  gap: 12px;
   align-items: start;
+}
+
+.gridSlot {
+  min-width: 0;
+}
+
+.gridCombat {
+  grid-area: combat;
+}
+
+.gridAbilities {
+  grid-area: abilities;
+}
+
+.gridTrackers {
+  grid-area: trackers;
+}
+
+.gridWeapons {
+  grid-area: weapons;
+}
+
+.gridFeatures {
+  grid-area: features;
+}
+
+.miniButton,
+.iconButton,
+.tabAction,
+.tabCloseButton,
+.npcListItem {
+  border: 0;
+  background: transparent;
+  color: #a8b8cf;
+}
+
+.miniButton,
+.tabCloseButton {
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(76, 92, 118, 0.22);
+  background: rgba(33, 41, 56, 0.8);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.iconButton {
+  width: 18px;
+  height: 18px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #8fa1ba;
+}
+
+.tabAction,
+.npcListItem {
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(76, 92, 118, 0.22);
+  background: rgba(33, 41, 56, 0.8);
+  color: #dbe5f4;
+  cursor: pointer;
+}
+
+.npcListItem {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.npcListItemActive {
+  background: linear-gradient(180deg, rgba(61, 93, 146, 0.92), rgba(44, 68, 113, 0.9));
+  border-color: rgba(116, 152, 215, 0.45);
+  color: #f4f8ff;
 }
 
 .panel {
   display: grid;
   gap: 10px;
-  padding: 14px 16px;
-  border: 1px solid rgba(86, 60, 35, 0.12);
-  border-radius: 22px;
-  background: rgba(255, 251, 242, 0.92);
-  box-shadow: 0 8px 24px rgba(66, 42, 20, 0.06);
+  padding: 11px;
+  background:
+    linear-gradient(180deg, rgba(19, 25, 35, 0.96), rgba(17, 21, 29, 0.92)),
+    rgba(18, 22, 30, 0.94);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 18px 34px rgba(0, 0, 0, 0.14);
 }
 
-.compactPanel {
+.playPanel {
+  min-width: 0;
+}
+
+.dataPanel {
+  border-color: rgba(97, 108, 130, 0.16);
+}
+
+.tacticalPanel {
+  border-color: rgba(83, 117, 177, 0.24);
+  background:
+    linear-gradient(180deg, rgba(17, 24, 37, 0.98), rgba(16, 21, 31, 0.94)),
+    radial-gradient(circle at top left, rgba(80, 127, 209, 0.12), transparent 42%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 20px 42px rgba(4, 10, 20, 0.22);
+}
+
+.combatGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.statCard {
+  display: grid;
+  gap: 5px;
+  padding: 10px 8px;
+  border: 1px solid rgba(83, 108, 150, 0.26);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(24, 33, 47, 0.96), rgba(21, 28, 39, 0.88)),
+    rgba(22, 28, 38, 0.88);
+}
+
+.tableHeader {
+  padding: 0 2px 5px;
+  border-bottom: 1px solid rgba(84, 96, 119, 0.2);
+}
+
+.tableRow,
+.abilityRow {
+  min-height: 34px;
+  padding: 0 0 5px;
+  border-bottom: 1px solid rgba(72, 83, 102, 0.14);
+}
+
+.abilityRow {
+  grid-template-columns: 1.05fr 0.34fr 0.42fr 0.42fr;
+}
+
+.attackRow {
+  grid-template-columns: 1.4fr 0.82fr 0.68fr 0.92fr 18px;
+}
+
+.detailRow {
+  grid-template-columns: 0.82fr 1.35fr 18px;
+}
+
+.trackerRow {
+  grid-template-columns: 1fr 62px 62px 18px;
+}
+
+.rowLabel {
+  font-size: 0.85rem;
+  color: #dce3ee;
+}
+
+.abilityRow strong {
+  font-size: 0.98rem;
+  color: #f3f8ff;
+}
+
+.featureColumns {
+  grid-template-columns: 1fr;
+}
+
+.sidebarCoins {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.coinCard {
+  display: grid;
+  gap: 5px;
+  padding: 10px 8px;
+  border: 1px solid rgba(73, 85, 104, 0.18);
+  border-radius: 12px;
+  background: rgba(20, 25, 34, 0.72);
+}
+
+.writerPanel,
+.inventoryPanel,
+.npcList,
+.npcDetail,
+.journalPanel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  background:
+    linear-gradient(180deg, rgba(18, 24, 33, 0.96), rgba(16, 21, 29, 0.94)),
+    rgba(17, 22, 30, 0.92);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 20px 40px rgba(0, 0, 0, 0.16);
+}
+
+.writerField {
+  display: grid;
+  gap: 8px;
+}
+
+.writerField textarea,
+.npcDetail textarea,
+.inventoryItem textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.55;
+  padding: 14px 16px;
+}
+
+.inventoryPanel {
+  gap: 16px;
+}
+
+.inventoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.inventoryCategory {
+  display: grid;
+  gap: 10px;
   align-content: start;
+  padding: 14px;
+  border: 1px solid rgba(88, 99, 121, 0.16);
+  border-radius: 18px;
+  background: rgba(20, 25, 34, 0.58);
+}
+
+.inventoryCategoryList {
+  display: grid;
+  gap: 10px;
+}
+
+.inventoryItem {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(88, 99, 121, 0.16);
+  border-radius: 16px;
+  background: rgba(20, 25, 34, 0.72);
+}
+
+.inventoryTopRow {
+  grid-template-columns: minmax(0, 1fr) 80px 156px 22px;
+}
+
+.npcPanel {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 12px;
+  background: transparent;
+  border: 0;
+}
+
+.npcListItems {
+  align-content: start;
+}
+
+.emptyState {
+  display: grid;
+  gap: 10px;
+  place-content: center;
+  min-height: 320px;
+  text-align: center;
+}
+
+.journalPanel {
+  gap: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.journalWall {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.journalComposer,
+.journalEntry {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(88, 99, 121, 0.16);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(24, 30, 40, 0.92), rgba(20, 25, 34, 0.88)),
+    rgba(20, 25, 34, 0.8);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 16px 32px rgba(0, 0, 0, 0.14);
+}
+
+.journalComposer {
+  align-items: start;
+}
+
+.journalComposerAvatar,
+.journalEntryAvatar {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(77, 122, 204, 0.9), rgba(55, 88, 149, 0.92));
+  color: #f5f8ff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.journalComposerBody,
+.journalEntryBody,
+.journalEditor,
+.journalPost {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.journalTitleInput {
+  min-height: 30px;
+}
+
+.journalComposerTextarea {
+  min-height: 110px;
+  border-radius: 16px;
+}
+
+.journalComposerFooter,
+.journalEntryActions,
+.journalMetaText,
+.journalTagRow,
+.journalSelectedTags,
+.journalViewTabs,
+.journalTagFilters,
+.entryTagList {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.journalComposerFooter {
+  justify-content: space-between;
+}
+
+.journalCustomTagRow,
+.journalFilters {
+  display: grid;
+  gap: 10px;
+}
+
+.journalCustomTagRow {
+  grid-template-columns: minmax(0, 1fr) 34px;
+  align-items: center;
+}
+
+.journalMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: #93a2b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.journalMetaText strong {
+  color: #edf3fc;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.journalPost h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #f0f5fd;
+}
+
+.journalPost p {
+  white-space: pre-wrap;
+  line-height: 1.55;
+  color: #d6deea;
+}
+
+.tagChip,
+.filterChip {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(76, 92, 118, 0.22);
+  border-radius: 999px;
+  background: rgba(33, 41, 56, 0.8);
+  color: #c5d1e1;
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.tagChipActive,
+.filterChipActive,
+.miniButtonActive {
+  background: linear-gradient(180deg, rgba(61, 93, 146, 0.92), rgba(44, 68, 113, 0.9));
+  border-color: rgba(116, 152, 215, 0.45);
+  color: #f4f8ff;
+}
+
+.journalFilters {
+  padding: 0 4px;
+}
+
+.pinnedMarker {
+  color: #b8d0ff;
+}
+
+.tabAction:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
 }
 
 .loadingPanel {
   min-height: 60vh;
   display: grid;
   place-content: center;
-  gap: 12px;
+  gap: 10px;
   text-align: center;
 }
 
-.panelHeader {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: center;
-}
-
-.panelHeader h2 {
-  font-size: 1.05rem;
-  line-height: 1.05;
-  color: #2d190f;
-}
-
-.heroGrid,
-.identityGrid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.field {
-  display: grid;
-  gap: 4px;
-}
-
-.field span,
-.statCard span,
-.abilityCard span,
-.coinField span {
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #846448;
-}
-
-.field input,
-.field textarea,
-.statCard input,
-.abilityCard input,
-.coinField input {
+.page input,
+.page textarea,
+.page select {
   width: 100%;
-  border: 1px solid rgba(105, 76, 50, 0.16);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.88);
-  color: #2f2119;
+  min-width: 0;
+  min-height: 33px;
+  border: 1px solid rgba(78, 92, 115, 0.18);
+  border-radius: 9px;
+  background: rgba(24, 30, 40, 0.92);
+  color: #edf3fc;
   font: inherit;
-  padding: 10px 12px;
+  padding: 5px 9px;
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease,
-    background-color 160ms ease;
-}
-
-.field textarea {
-  resize: none;
-  min-height: 64px;
-}
-
-.field input:focus,
-.field textarea:focus,
-.statCard input:focus,
-.abilityCard input:focus,
-.coinField input:focus {
-  outline: none;
-  border-color: rgba(133, 88, 37, 0.8);
-  box-shadow: 0 0 0 3px rgba(201, 160, 92, 0.16);
-  background: #fff;
-}
-
-.statGrid,
-.compactStatGrid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.statCard {
-  display: grid;
-  gap: 6px;
-  padding: 10px;
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 240, 225, 0.92));
-  border: 1px solid rgba(115, 81, 53, 0.08);
-}
-
-.statCard input {
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 8px 10px;
-}
-
-.abilityGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.abilityCard {
-  display: grid;
-  gap: 4px;
-  padding: 10px 12px;
-  border-radius: 16px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(242, 233, 214, 0.95));
-  border: 1px solid rgba(113, 81, 47, 0.1);
-}
-
-.abilityCard strong {
-  font-size: 1.6rem;
-  line-height: 1;
-  color: #3c2315;
-}
-
-.abilityCard input {
-  text-align: right;
-  font-size: 0.98rem;
-  font-weight: 700;
-  padding: 8px 10px;
-}
-
-.stack,
-.subsection,
-.repeatableList {
-  display: grid;
-  gap: 8px;
-}
-
-.subsectionHeader,
-.repeatableHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.repeatableCard {
-  display: grid;
-  gap: 8px;
-  padding: 8px 10px;
-  border-radius: 14px;
-  border: 1px solid rgba(113, 81, 47, 0.1);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 236, 220, 0.96));
-}
-
-.cardLabel {
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #7d5b3a;
-}
-
-.addButton,
-.iconButton {
-  border: 0;
-  font: inherit;
-  cursor: pointer;
-  transition:
-    transform 160ms ease,
     background-color 160ms ease,
-    color 160ms ease;
+    transform 160ms ease;
 }
 
-.addButton {
-  border-radius: 999px;
-  padding: 7px 10px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  background: #7a4a25;
-  color: #fff6e5;
-  white-space: nowrap;
+.page input:hover,
+.page textarea:hover,
+.page select:hover,
+.tabButton:hover,
+.miniButton:hover,
+.tagChip:hover,
+.filterChip:hover,
+.tabAction:hover,
+.npcListItem:hover {
+  border-color: rgba(109, 128, 160, 0.28);
 }
 
-.iconButton {
-  width: 24px;
-  height: 24px;
-  display: inline-grid;
-  place-items: center;
-  border-radius: 999px;
-  background: rgba(122, 74, 37, 0.11);
-  color: #7a4a25;
-  font-size: 1rem;
-  line-height: 1;
+.page input:focus,
+.page textarea:focus,
+.page select:focus {
+  outline: none;
+  border-color: rgba(98, 142, 216, 0.72);
+  box-shadow: 0 0 0 2px rgba(98, 142, 216, 0.12);
+  background: rgba(29, 35, 46, 0.98);
 }
 
-.addButton:hover,
-.iconButton:hover {
-  transform: translateY(-1px);
+.sideCard input {
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(21, 26, 35, 0.7);
 }
 
-.attackFields {
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr 0.7fr 0.9fr;
-  gap: 8px;
+.sideChip input {
+  width: auto;
+  min-width: 70px;
+  max-width: 100%;
+  min-height: 26px;
+  padding: 0 4px 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.equipmentFields {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) 72px;
-  gap: 8px;
+.sideChip input:focus {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
 }
 
-.coins {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
+.abilityRow input,
+.trackerRow input:nth-child(2),
+.trackerRow input:nth-child(3),
+.coinCard input,
+.statCard input,
+.inventoryTopRow input:last-of-type {
+  text-align: center;
 }
 
-.coinField {
-  display: grid;
-  gap: 4px;
+@media (max-width: 1380px) {
+  .workspace {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+
+  .sheetGrid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "combat"
+      "trackers"
+      "abilities"
+      "weapons"
+      "features";
+  }
+
+  .npcPanel {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .inventoryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.notesPanel textarea {
-  min-height: 72px;
-}
-
-@media (max-width: 1200px) {
-  .topGrid,
-  .dashboardGrid {
+@media (max-width: 1040px) {
+  .workspace,
+  .npcPanel {
     grid-template-columns: 1fr;
   }
 
-  .identityGrid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .inventoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .mainBoard {
+    min-width: 0;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 720px) {
   .page {
-    width: min(100vw - 16px, 100%);
-    padding: 8px 0 18px;
-    gap: 8px;
+    width: min(100vw - 14px, 100%);
   }
 
   .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sideGrid,
+  .combatGrid,
+  .sidebarCoins,
+  .abilityRow,
+  .attackRow,
+  .detailRow,
+  .trackerRow,
+  .tableHeader,
+  .inventoryTopRow {
     grid-template-columns: 1fr;
   }
 
-  .identityGrid,
-  .compactStatGrid,
-  .abilityGrid,
-  .attackFields,
-  .coins {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .equipmentFields {
-    grid-template-columns: 1fr 96px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero,
-  .panel {
-    padding: 12px;
-    border-radius: 18px;
-  }
-
-  .identityGrid,
-  .compactStatGrid,
-  .abilityGrid,
-  .attackFields,
-  .coins,
-  .equipmentFields {
+  .journalWall {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 1.7rem;
+  .journalComposer,
+  .journalEntry {
+    grid-template-columns: 1fr;
   }
 
-  .panelHeader {
-    align-items: start;
+  .journalComposerAvatar,
+  .journalEntryAvatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sideChipList {
+    display: grid;
+  }
+
+  .sideChip {
+    width: 100%;
+  }
+
+  .sideChip input {
+    width: 100%;
   }
 }

@@ -1,6 +1,6 @@
 :root {
-  --background: #e8dcc2;
-  --foreground: #2b1c12;
+  --background: #0d1117;
+  --foreground: #e7eef8;
 }
 
 html {
@@ -17,8 +17,12 @@ body {
   min-height: 100vh;
   color: var(--foreground);
   background:
-    radial-gradient(circle at top, rgba(255, 243, 210, 0.85), transparent 35%),
-    linear-gradient(180deg, #efe3c7 0%, #dcc7a5 100%);
+    radial-gradient(circle at top left, rgba(90, 126, 191, 0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(44, 67, 114, 0.12), transparent 28%),
+    linear-gradient(rgba(70, 84, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 84, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, #11161e 0%, #0b1016 100%);
+  background-size: auto, auto, 40px 40px, 40px 40px, auto;
   font-family: var(--font-geist-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -42,5 +46,5 @@ a {
 }
 
 ::selection {
-  background: rgba(151, 103, 40, 0.24);
+  background: rgba(94, 143, 221, 0.22);
 }

@@ -1,29 +1,38 @@
 {
   "hero": {
-    "name": "Kevin ping pong",
-    "ancestry": "Dragonborn",
-    "background": "Soldier",
-    "className": "Monk",
-    "level": "5",
-    "xp": "75",
-    "alignment": ""
+    "name": "Kett Quietknife",
+    "ancestry": "Halfling",
+    "background": "Charlatan",
+    "className": "Rogue",
+    "subclass": "Soulknife",
+    "level": "4",
+    "xp": "4657",
+    "alignment": "Lawful Evil"
   },
   "combat": [
     {
       "label": "Armor Class",
-      "value": ""
+      "value": "16"
     },
     {
       "label": "Current HP",
-      "value": "25"
+      "value": "31"
+    },
+    {
+      "label": "Temp HP",
+      "value": "0"
     },
     {
       "label": "Initiative",
-      "value": "8"
+      "value": "+4"
     },
     {
       "label": "Speed",
-      "value": "30 ft"
+      "value": "25 ft"
+    },
+    {
+      "label": "Size",
+      "value": "Small (2'11\")"
     },
     {
       "label": "Proficiency",
@@ -31,132 +40,379 @@
     },
     {
       "label": "Passive Perception",
-      "value": "11"
+      "value": "16"
     }
   ],
   "abilities": {
     "strength": {
       "label": "Strength",
-      "value": 10
+      "value": 2,
+      "bonus": 0
     },
     "dexterity": {
       "label": "Dexterity",
-      "value": 17
+      "value": 23,
+      "bonus": 1
     },
     "constitution": {
       "label": "Constitution",
-      "value": 16
+      "value": 14,
+      "bonus": 0
     },
     "intelligence": {
       "label": "Intelligence",
-      "value": 5
+      "value": 15,
+      "bonus": 0
     },
     "wisdom": {
       "label": "Wisdom",
-      "value": 14
+      "value": 14,
+      "bonus": 0
     },
     "charisma": {
       "label": "Charisma",
-      "value": 8
+      "value": 18,
+      "bonus": 0
     }
   },
   "attacks": [
     {
-      "name": "Bow & Arrow",
-      "damage": "1d6",
+      "name": "Dagger",
+      "damage": "1d4 piercing",
       "stat": "Dex",
-      "range": "80-320 ft"
+      "range": "Melee / thrown"
     },
     {
-      "name": "Unarmed Strike",
-      "damage": "1d4",
+      "name": "Short Sword",
+      "damage": "1d6 piercing",
       "stat": "Dex",
       "range": "Melee"
+    },
+    {
+      "name": "Hand Crossbow",
+      "damage": "1d8 piercing",
+      "stat": "Dex +6",
+      "range": "Ranged"
+    },
+    {
+      "name": "Psychic Blades",
+      "damage": "1d6 psychic / 1d4 throw",
+      "stat": "Dex",
+      "range": "Melee / thrown"
+    },
+    {
+      "name": "Rowenas Blade",
+      "damage": "3d4",
+      "stat": "dex",
+      "range": "Mele / Thrown"
     }
   ],
   "traits": [
     {
-      "title": "15 ft cone or 30 ft straight line (5 ft wide)",
-      "description": ""
+      "title": "Sneak Attack",
+      "description": "Rogue class feature."
     },
     {
-      "title": "1d10 damage",
-      "description": ""
+      "title": "Expertise",
+      "description": "Rogue class feature."
     },
     {
-      "title": "Damage resistance",
-      "description": ""
+      "title": "Weapon Mastery",
+      "description": "Dagger, Short Bow."
     },
     {
-      "title": "Fire damage resistance",
-      "description": ""
+      "title": "Steady Aim",
+      "description": "Unclear note: -10 ms ft."
     },
     {
-      "title": "Darkvision 60 ft",
-      "description": ""
+      "title": "Psionic Power",
+      "description": "Soulknife feature."
+    },
+    {
+      "title": "Whispers",
+      "description": "Telepathy, 1d6 hours."
+    },
+    {
+      "title": "Knack",
+      "description": "4x 1d6 + bonus to rolls."
+    },
+    {
+      "title": "Psychic Blades",
+      "description": "1d6 attack 1d4 bonus"
+    },
+    {
+      "title": "Brave",
+      "description": "Species trait."
+    },
+    {
+      "title": "Nimble",
+      "description": "Species trait."
+    },
+    {
+      "title": "Stealthy",
+      "description": "Species trait."
+    },
+    {
+      "title": "Small",
+      "description": "Species trait."
     }
   ],
   "feats": [
     {
-      "title": "Savage Attacker: once a target is hit, roll weapon damage dice twice and use either roll.",
-      "description": ""
+      "title": "Lucky",
+      "description": "Feat."
+    },
+    {
+      "title": "Skilled",
+      "description": "Feat."
+    },
+    {
+      "title": "Alert",
+      "description": "Feat."
     }
   ],
   "equipment": [
     {
-      "name": "spears",
-      "count": "2"
+      "name": "Leather Armor",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "daggers",
-      "count": "5"
+      "name": "Dagger",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "Artisan's tools",
-      "count": ""
+      "name": "Daggers",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "Explorer's pack",
-      "count": ""
+      "name": "Short Sword",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "gold pieces",
-      "count": "14"
+      "name": "Arrows",
+      "count": "20",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "gold pieces",
-      "count": "11"
+      "name": "Backpack",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "arrows",
-      "count": "20"
+      "name": "Tools",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "Gaming set",
-      "count": ""
+      "name": "Mysterious item (?)",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "Healer's kit",
-      "count": ""
+      "name": "Pen",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "Quiver",
-      "count": ""
+      "name": "Note (Cleric?)",
+      "count": "1",
+      "description": "",
+      "category": "gear"
     },
     {
-      "name": "Traveler's clothes",
-      "count": ""
+      "name": "Crowbar",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Pouch",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Clothes",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Costume",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Ration",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Crossbow",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Invis Ring",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Silver coins",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Perfume (?)",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "HP potion",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Bearer(?) coins",
+      "count": "10",
+      "description": "",
+      "category": "gear"
+    },
+    {
+      "name": "Blank (?)",
+      "count": "1",
+      "description": "",
+      "category": "gear"
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Bill",
+      "notes": ""
+    },
+    {
+      "name": "",
+      "notes": ""
+    }
+  ],
+  "journalEntries": [
+    {
+      "title": "",
+      "content": "sdf",
+      "createdAt": "2026-04-08T20:24:26.615Z",
+      "tags": [],
+      "pinned": false
+    },
+    {
+      "title": "",
+      "content": "asdf",
+      "createdAt": "2026-04-08T20:24:21.083Z",
+      "tags": [],
+      "pinned": false
+    },
+    {
+      "title": "",
+      "content": "soundsd good",
+      "createdAt": "2026-04-08T20:24:14.248Z",
+      "tags": [
+        "session"
+      ],
+      "pinned": false
+    },
+    {
+      "title": "",
+      "content": "",
+      "createdAt": "2026-04-08T19:04:13.795Z",
+      "tags": [],
+      "pinned": false
+    },
+    {
+      "title": "Bob",
+      "content": "Jumped\n",
+      "createdAt": "2026-04-08T19:04:04.295Z",
+      "tags": [
+        "rumor"
+      ],
+      "pinned": true
+    }
+  ],
+  "proficiencies": {
+    "armor": [
+      "Light Armor"
+    ],
+    "weapons": [
+      "Simple ",
+      "Martial"
+    ],
+    "tools": [
+      "Thieves' Tools"
+    ]
+  },
+  "languages": [
+    "Thieves Cant"
+  ],
+  "attunement": [],
+  "trackers": [
+    {
+      "name": "",
+      "current": "",
+      "max": ""
     }
   ],
   "coins": {
-    "cp": "",
-    "sp": "",
+    "cp": "162",
+    "sp": "146",
     "ep": "",
-    "gp": "25",
+    "gp": "1038",
     "pp": ""
   },
-  "notes": "sweet\n",
+  "notes": "Subclass: Soulknife\n\nSpells / Abilities:\n- Armor of Agathys (temp shield)\n- Cloud of Daggers (15 ft, 10m object)\n\nProficiencies:\n- Armor: Light\n- Weapons: Simple, Martial\n- Tools: Thieves' Tools, Disguise Kit\n\nLanguages:\n- Thieves' Cant\n\nMagic Item Attunement:\n- Ledger\n\nBackstory:\n- Ledger Bound\n\nAppearance:\n- Hooded figure",
+  "journal": "",
+  "layout": {
+    "items": [
+      {
+        "id": "combat",
+        "span": 1
+      },
+      {
+        "id": "abilities",
+        "span": 1
+      },
+      {
+        "id": "features",
+        "span": 2
+      },
+      {
+        "id": "weapons",
+        "span": 1
+      },
+      {
+        "id": "trackers",
+        "span": 1
+      }
+    ]
+  },
   "meta": {
-    "updatedAt": "2026-04-08T03:02:46.984Z"
+    "updatedAt": "2026-04-08T20:34:46.704Z"
   }
 }
